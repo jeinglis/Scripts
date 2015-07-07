@@ -1,15 +1,15 @@
 /*
 *@author James Inglis
 *@date July 6th 2015
-*This program was written to run on startup of a rasberrypi attached to a display
-*Intended to be used to display the selected webpages and cycle through them on a delay
+*This program was written to run on startup of a raspberry Pi running rapsbian
+*Intended to be used to display the selected webpages in a lobby and cycle through them on a delay
 *The program uses an infinite loop so must be terminated from the terminal
+*This program uses the xdotool command line tool set (sudo apt-get install xdotool)
+*This program uses the chromium browser by default (sudo apt-get install chromium-browser)
 */
 
 
-#include <iostream>
 #include <stdlib.h>
-#include <stdio.h>
 #include <unistd.h>
 
 
@@ -17,10 +17,11 @@ using namespace std;
 
 int main(){
 
-int websites = 3;
+int websites = 3;//enter the number of websites you wish to switch between
 
-char* Addresses[3]{
-
+char* Addresses[]{
+	//any number of websites can be added. Just add the URLs formatted the same as the sample URLs 
+	//make sure they are seperated by commas! the first URL must use the --kiosk option to go full screen
 	"chromium-browser --kiosk http://www.cmegroup.com/trading/agricultural/grain-and-oilseed/corn.html&" ,
 	"chromium-browser http://www.cmegroup.com/trading/fx/g10/canadian-dollar.html&",
 	"chromium-browser http://www.cmegroup.com/trading/agricultural/livestock/lean-hogs.html&"
@@ -28,15 +29,11 @@ char* Addresses[3]{
 
 for(int i = 0; i<websites; i++){
 	system(Addresses[i]);
-
-sleep(3);
 }
 
+sleep(10);//just for timing so the pages are loaded before key commands are sent
 
-sleep(20);
-
-
-int refresh = 0;
+int refresh = 0;//initialize refresh counter
 
 while(1){
 	refresh++;//increment the refresh counter
@@ -48,9 +45,8 @@ while(1){
 	refresh = 0;
 	}
 	
-	sleep(15); // amount of time to wait between tab switches
-}
-
+	/* CHANGE THIS SLEEP TIME TO ALTER THE DELAY BETWEEN PAGES*/
+	sleep(15); 
 
 return 0;
 }
