@@ -1,8 +1,9 @@
 /*
 *@author James Inglis
 *@date July 6th 2015
-*This program was written to run on startup of a raspberry Pi running rapsbian
+*This program was written to run from the command line on startup of a raspberry Pi running rapsbian
 *Intended to be used to display the selected webpages in a lobby and cycle through them on a delay
+*To run on startup add @[file path]./[compiled name] to the autostart file in the etc/xdg/lxsession/LXDE-[username]
 *The program uses an infinite loop so must be terminated from the terminal
 *This program uses the xdotool command line tool set (sudo apt-get install xdotool)
 *This program uses the chromium browser by default (sudo apt-get install chromium-browser)
@@ -27,7 +28,7 @@ char* Addresses[]{
 	"chromium-browser http://www.cmegroup.com/trading/agricultural/livestock/lean-hogs.html&"
 	};
 
-for(int i = 0; i<websites; i++){
+for(int i = 0; i<websites; i++){//open websites in one browser window in seperate tabs
 	system(Addresses[i]);
 }
 
@@ -45,7 +46,7 @@ while(1){
 	refresh = 0;
 	}
 	
-	/* CHANGE THIS SLEEP TIME TO ALTER THE DELAY BETWEEN PAGES*/
+	/* CHANGE THIS SLEEP TIME TO ALTER THE DELAY BETWEEN PAGES (IN SECONDS)*/
 	sleep(15); 
 
 return 0;
