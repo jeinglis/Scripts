@@ -9,10 +9,8 @@
 *This program uses the chromium browser by default (sudo apt-get install chromium-browser)
 */
 
-
 #include <stdlib.h>
 #include <unistd.h>
-
 
 using namespace std;
 
