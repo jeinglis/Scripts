@@ -8,4 +8,4 @@ My random coding projects
 *****************************  
 -NameGenerator
 
-  For computers running windows intended to be used in combination with an application which changes a computers name when passed the MAC as an arg 'NameGenerator' removes all punctuation from the Mac address and appends it to a chosen prefix. The resulting computer name is then written to the Reg 
+  For computers running windows. Intended to be used in combination with an application which changes a computers name. When passed the MAC as an arg 'NameGenerator' removes all punctuation from the Mac address and appends it to a chosen prefix. The resulting computer name is then written to the Reg 
