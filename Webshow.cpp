@@ -28,7 +28,7 @@ char* Addresses[]{
 	"chromium-browser http://www.cmegroup.com/trading/agricultural/livestock/lean-hogs.html&"
 	};
 
-for(int i = 0; i<websites; i++){//open websites in one browser window in seperate tabs
+for(int i = 0; i<websites; i++){//open URLS in seperate tabs of a browser window
 	system(Addresses[i]);
 }
 
