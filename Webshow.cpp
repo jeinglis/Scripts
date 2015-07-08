@@ -39,7 +39,7 @@ while(1){
 
 	system("xdotool key ctrl+Page_Down");	//move to next tab
 
-	if(refresh == 30){//if the refresh counter has reached 30 refresh current page and reset counter
+	if(refresh == 20){//if the refresh counter has reached 30 refresh current page and reset counter
 	system("xdotool key ctrl+r")
 	refresh = 0;
 	}
