@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
 {
 
 	//std::string mac = "F0:4D:A2:9F:C4:5F";
-	std::string prefix = "";//enter  prefix 
+	std::string prefix = "";//enter your prefix here
 	string mac = argv[1];
 
 	//moves through command line argument (the mac address)
@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
 
 	/*
 	*Checks if Reg key is created already if not makes reg key and sets value
-	*@Requires LPCWSTR string pointer aswell as the size of the wstring being pointed to
+	*@Requires LPCWSTR aswell as the size of the wstring being pointed to
 	*@Returns writes generated computerName to the specified Reg location
 	*/
 void regWrite(LPCWSTR namePtr, int size)
@@ -56,10 +56,10 @@ void regWrite(LPCWSTR namePtr, int size)
 	//HKCU\Software\ComputerInfo\name
 	HKEY hKey;
 
-	//Step 1: Open the key
+	//Open the key
 	long sts = RegOpenKeyEx(HKEY_CURRENT_USER, L"Software\\ComputerInfo", 0, KEY_ALL_ACCESS, &hKey);
 
-	//Step 2: If failed, create the key
+	//If failed, create the key
 	if (ERROR_NO_MATCH == sts || ERROR_FILE_NOT_FOUND == sts)
 	{
 		cout << "Creating registry key Software\\ComputerName" << endl;
