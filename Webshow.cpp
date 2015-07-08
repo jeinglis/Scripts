@@ -39,11 +39,15 @@ while(1){
 
 	system("xdotool key ctrl+Page_Down");	//move to next tab
 
-	if(refresh == 20){//if the refresh counter has reached 30 refresh current page and reset counter
-	system("xdotool key ctrl+r")
-	refresh = 0;
+	if(refresh == 16){//when the refresh counter reaches the specified count refresh current page
+		if(!system("ping -c1 -w2 www.google.ca")){//ping google if it is alive refresh the page
+			system("xdotool key ctrl+r")
+			refresh = 0;
+		}
+		else{//if not alive do not refresh this time
+			refresh = 0;
+		}
 	}
-	
 	/* CHANGE THIS SLEEP TIME TO ALTER THE DELAY BETWEEN PAGES (IN SECONDS)*/
 	sleep(15); 
 
