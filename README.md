@@ -1,6 +1,9 @@
 # Stuff-I-Made
 My random coding projects
+*********************************
+-Generics
 
+  Generic algorithms for both C++ and Java
 *****************************
 -Webshow 
 
