@@ -1,7 +1,7 @@
 # Stuff-I-Made
 My random coding projects
 *********************************
--Generics
+-Generics <b>(Incomplete)</b>
 
   Generic algorithms for both C++ and Java
 *****************************
